@@ -11,8 +11,8 @@
      values←⊃10,⍨⊃(//)⎕VFI values ⍝ convert to number, use 10 as default
      html←'<title>Hello Math!</title>'
      html,←'<form id="myForm" method="post" action="HelloMath">'
-     html,←'Select a function: ',('name="fn" ',submitOnChange)#.HtmlUtil.DropDown'+-×÷!⌈⌊|<≤=≥>≠'
-     html,←'<br/>Values to display: ',('name="values" ',submitOnChange)#.HtmlUtil.Slider 2 15 10
+     html,←'Select a function: ',('name="fn" ',submitOnChange)#.HtmlUtil.DropDown'+-×÷!⌈⌊|<≤=≥>≠'fn
+     html,←'<br/>Values to display: ',('name="values" ',submitOnChange)#.HtmlUtil.Slider 2 15,values
      html,←'div'#.HtmlUtil.Enclose #.HtmlUtil.Table fn FunctionTable values
      html,←'</form>'
      resp.Content←html

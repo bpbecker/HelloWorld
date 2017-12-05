@@ -520,7 +520,7 @@
           r[1 2 3 8]←HTMLRendererArgs.(obj event op url)
           r[4]←1
           r[5 6]←HttpStatus HttpStatusText
-          r[7]←⊂'text/html'{0∊⍴⍵:⍺ ⋄ ⍵}Headers Get'content-type' 
+          r[7]←⊂'text/html'{0∊⍴⍵:⍺ ⋄ ⍵}Headers Get'content-type'
           r[9 10]←FormatHeaders(U.UnicodeToHTML Content)
         ∇
 
@@ -677,7 +677,7 @@
       :If 0≠⍴i←(r='%')/⍳⍴r
       :AndIf 0≠⍴i←(i≤¯2+⍴r)/i
           z←r[j←i∘.+1 2]
-          t←'UTF-8'⎕UCS 16⊥⍉16|'0123456789ABCDEF0123456789abcdef'⍳z
+          t←{0::⎕UCS ⍵ ⋄ 'UTF-8'⎕UCS ⍵}16⊥⍉16|'0123456789ABCDEF0123456789abcdef'⍳z
           lens←⊃∘⍴¨'UTF-8'∘⎕UCS¨t  ⍝ UTF-8 is variable length encoding
           fill←i[¯1↓+\0,lens]
           r[fill]←t

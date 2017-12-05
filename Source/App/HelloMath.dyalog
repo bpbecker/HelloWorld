@@ -13,7 +13,7 @@
      html,←'<form id="myForm" method="post" action="HelloMath">'
      html,←'Select a function: ',('name="fn" ',submitOnChange)#.HtmlUtil.DropDown'+-×÷!⌈⌊|<≤=≥>≠'
      html,←'<br/>Values to display: ',('name="values" ',submitOnChange)#.HtmlUtil.Slider 2 15 10
-     html,←'div'#.HtmlUtil.Table fn FunctionTable values
+     html,←'div'#.HtmlUtil.Enclose #.HtmlUtil.Table fn FunctionTable values
      html,←'</form>'
      resp.Content←html
      r←resp.ToHtmlRenderer                   ⍝ and send it back

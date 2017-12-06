@@ -2,7 +2,7 @@
  submitOnChange←'onchange="document.getElementById(''myForm'').submit()"'
  :If setup←0∊⍴args ⍝ setup
      evt←'Event' 'HTTPRequest' 'HelloMath'
-     'hr'⎕WC'HTMLRenderer'('Coord' 'ScaledPixel')('Size' 400 400)evt
+     'hr'⎕WC'HTMLRenderer'('Coord' 'ScaledPixel')('Size' 600 600)evt
  :Else ⍝ callback, get values from form data
      req←⎕NEW #.HttpUtils.HttpRequest args   ⍝ create a request from the callback data
      resp←⎕NEW #.HttpUtils.HttpResponse args ⍝ create a response based on the request
@@ -13,7 +13,7 @@
      html,←'<form id="myForm" method="post" action="HelloMath">'
      html,←'Select a function: ',('name="fn" ',submitOnChange)#.HtmlUtil.DropDown'+-×÷!⌈⌊|<≤=≥>≠'fn
      html,←'<br/>Values to display: ',('name="values" ',submitOnChange)#.HtmlUtil.Slider 2 15,values
-     html,←'div'#.HtmlUtil.Enclose #.HtmlUtil.Table fn FunctionTable values
+     html,←'<br/>','div'#.HtmlUtil.Enclose #.HtmlUtil.Table fn FunctionTable values
      html,←'</form>'
      resp.Content←html
      r←resp.ToHtmlRenderer                   ⍝ and send it back

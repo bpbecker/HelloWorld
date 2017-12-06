@@ -203,7 +203,12 @@
                   steps+←1
                   :If verbose ⋄ 0 Log'running: ',f ⋄ :EndIf
                   (trace/1)ns.⎕STOP f
-                  f LogTest(ns⍎f)⍬
+                  :Trap (halt∨trace)↓0
+                     f LogTest (ns⍎f) ⍬                  
+                  :Else
+                     f LogTest ⊃⎕DM
+                  :EndTrap
+                  
               :EndFor
      
               :If null≢f←args.teardown
@@ -218,7 +223,7 @@
               :If 0=⍴LOGS
                   r,←(quiet≡null)/⊂'   ',((1≠≢setups)/setup,': '),(⍕steps),' test',((1≠steps)/'s'),' passed in ',(1⍕0.001×⎕AI[3]-start),'s'
               :Else
-                  r,←(⊂'Errors encountered with setup "',setup,'":'),'   '∘,¨LOGS
+                  r,←(⊂'Errors encountered',(setup≢null)/' with setup "',setup,'":'),'   '∘,¨LOGS
               :EndIf
           :EndFor ⍝ Setup
       :EndFor ⍝ repeat

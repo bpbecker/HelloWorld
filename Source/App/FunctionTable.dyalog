@@ -1,3 +1,4 @@
-﻿ r←fn FunctionTable values
- values←⍳values
- r←(fn,values)⍪values,⍎'∘.',fn,'⍨values'
+﻿ r←fn FunctionTable n;values;f
+ values←⍳n
+ f←⍎fn
+ r←(fn,values)⍪values,∘.f⍨values

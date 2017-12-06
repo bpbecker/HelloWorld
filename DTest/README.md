@@ -1,0 +1,2 @@
+# DyalogBuild
+This folder contains an updated version of the Dyalog ]dtest and ]dbuild user commands, with small tweaks demonstrated in the December 7th Webinar. The fixes will be incorporated in a new release of Dyalog User Commands and posted to [the User Command download page](https://www.dyalog.com/tools/user-commands.htm).

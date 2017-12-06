@@ -1,4 +1,4 @@
-DyalogBuild: 0.1
+﻿DyalogBuild: 0.1
 ID         : HelloMath, Version=1.0
 Description: Application for 7 Dec 2017 Dyalog Webinar
 Defaults   : ⎕IO←⎕ML←1
@@ -7,5 +7,6 @@ TARGET     : Distribution/HelloMath.dws
 NS    : Source/HttpUtils.dyalog, Target=#
 NS    : Source/HtmlUtil/*.dyalog, Target=#.HtmlUtil
 NS    : Source/App/*.dyalog, Target=#.App
+NS    : Tests/*.dyalog, Target=#.Tests
 
 LX    : #.App.HelloMath ''

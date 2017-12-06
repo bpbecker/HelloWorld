@@ -1,4 +1,5 @@
-﻿ r←fn FunctionTable n;values;f
+﻿ r←fn FunctionTable n;values;f;⎕PP
  values←⍳n
  f←⍎fn
- r←(fn,values)⍪values,∘.f⍨values
+ ⎕PP←2
+ r←⍕¨(fn,values)⍪values,∘.f⍨values

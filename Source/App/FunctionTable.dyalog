@@ -2,4 +2,4 @@
  values←⍳n
  f←⍎fn
  ⎕PP←2
- r←⍕¨(fn,values)⍪values,∘.f⍨values
+ r←⍕¨(fn,values)⍪values,∘.{0::'!!!' ⋄ ⍺ f ⍵}⍨values

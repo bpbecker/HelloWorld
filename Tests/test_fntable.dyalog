@@ -3,7 +3,6 @@
  r←''
  ⎕PP←2
  :For fn :In #.App.functionList
-     t←fn #.App.FunctionTable 15
-     fail←t≢⍕¨(fn,values)⍪values,∘.(⍎fn)⍨values
+     fail←16 16≢⍴fn #.App.FunctionTable 15
      r,←fail/⊂'FunctionTable failed for "',fn,'"'
  :EndFor

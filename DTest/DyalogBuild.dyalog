@@ -313,6 +313,13 @@
      
       i←0 ⍝ we are on "line zero" if any logging happens
      
+      :If 0=≢args.Arguments
+          args.Arguments←,⊂file←FindBuildFile ⎕WSID
+          args.clear←1 ⍝ Rebuilding workspace
+      :AndIf 0=⍴file
+          'Build file not named and no default found' ⎕SIGNAL 22
+      :EndIf
+      
       file←1⊃args.Arguments
       (prod quiet save)←args.(production quiet 0) ⍝ save must be 0, ⎕SAVE does not work from a UCMD
       Clear args.clear
@@ -481,6 +488,16 @@
       :If quiet ⋄ r←0 0⍴0
       :Else ⋄ r←'DyalogBuild: ',(⍕≢lines),' lines processed in ',(1⍕0.001×⎕AI[3]-start),' seconds.'
       :EndIf
+    ∇
+   
+    ∇r←FindBuildFile path;found;file;ext
+     r←''
+     :Repeat 
+         path←(-(¯1↑path)∊'/\')↓path ⍝ drop trailing / or \
+         (path file ext)←⎕NPARTS path
+     :Until found←⎕NEXISTS r←path,file,'/',file,'.dyalogbuild'
+     :OrIf 1≥+/r∊'/\'  
+     r←found/r     
     ∇
 
     ∇ (exists file)←OpenFile file;tmp;path;extn;name

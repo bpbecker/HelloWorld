@@ -3,7 +3,7 @@
 
  :If setup←0∊⍴args ⍝    Empty args: Create an instance of HTMLRenderer
      evt←'Event' 'HTTPRequest' 'HelloMath'
-     'hr'⎕WC'HTMLRenderer'('URL' 'HelloMath')('Coord' 'ScaledPixel')('Size' 500 600)evt
+     'hr'⎕WC'HTMLRenderer'('URL' 'HelloMath')('Coord' 'ScaledPixel')('Size' 550 700)evt
 
  :Else             ⍝    Non-empty: Callback, generate HTML for form
      ⍝ Process input data

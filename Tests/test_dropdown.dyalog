@@ -1,6 +1,6 @@
 ﻿ r←test_dropdown dummy;t;values;fail;xml
 
- xml←⎕XML'id="xyz"'#.HtmlUtil.DropDown⊂'abc' 'def'
+ xml←⎕XML'id="xyz"'#.UI.DropDown⊂'abc' 'def'
  :If xml[;2]≢'select' 'option' 'option'
      →0⊣r←'Incorrect tag names'
  :ElseIf xml[;3]≢'' 'abc' 'def'

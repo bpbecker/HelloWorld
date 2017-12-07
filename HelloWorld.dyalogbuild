@@ -5,7 +5,7 @@ Defaults   : ⎕IO←⎕ML←1
 TARGET     : Distribution/HelloMath.dws
 
 NS    : Source/Root/*.dyalog, Target=#
-NS    : Source/HtmlUtil/*.dyalog, Target=#.HtmlUtil
+NS    : Source/UI/*.dyalog, Target=#.UI
 NS    : Source/App/*.dyalog, Target=#.App
 NS    : Tests/*.dyalog, Target=#.Tests
 

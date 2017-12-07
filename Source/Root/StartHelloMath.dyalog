@@ -1,5 +1,5 @@
 ﻿ StartHelloMath
-⍝ Run the HelloMath application
+⍝ Run the HelloMath application.
 
  App.HelloMath''
  :If 'Runtime'≡4⊃'.'⎕WG'APLVersion'

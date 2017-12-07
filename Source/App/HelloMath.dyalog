@@ -19,9 +19,9 @@
      html←'<title>Hello Math!</title>'
      html,←'<form id="myForm" method="post" action="HelloMath">'
      submitOnChange←'onchange="document.getElementById(''myForm'').submit()"'
-     html,←'Function: ',('name="fn" autofocus ',submitOnChange)#.HtmlUtil.DropDown functionList fn
-     html,←'<br/>Range: ',('name="max" ',submitOnChange)#.HtmlUtil.Slider 1 15,max
-     html,←'<br/><br/>','div'#.HtmlUtil.Enclose #.HtmlUtil.Table fntab
+     html,←'Function: ',('name="fn" autofocus ',submitOnChange)#.UI.DropDown functionList fn
+     html,←'<br/>Range: ',('name="max" ',submitOnChange)#.UI.Slider 1 15,max
+     html,←'<br/><br/>','div'#.UI.Enclose #.UI.Table fntab
      html,←'</form>'
 
      resp←⎕NEW #.HttpUtils.HttpResponse args ⍝ create a response based on the request

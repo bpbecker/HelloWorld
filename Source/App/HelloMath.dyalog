@@ -18,6 +18,11 @@
      ⍝ Generate HTML content
      html←'<title>Hello Math!</title>'
      html,←'<form id="myForm" method="post" action="HelloMath">'
+     html,←'style'#.UI.Enclose #.UI.ScriptFollows
+⍝ table {border-collapse:collapse; width: 100%;}
+⍝ td {text-align:center; padding: 4px;}
+⍝ td:first-child {border-right: 2px solid black;}
+⍝ tr:first-child>td {border-bottom: 2px solid black;}
      submitOnChange←'onchange="document.getElementById(''myForm'').submit()"'
      html,←'Function: ',('name="fn" autofocus ',submitOnChange)#.UI.DropDown functionList fn
      html,←'<br/>Range: ',('name="max" ',submitOnChange)#.UI.Slider 1 15,max
